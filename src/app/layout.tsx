@@ -1,8 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import localFont from "next/font/local";
+import "../shared/base.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const pretendard = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/Pretendard-Regular.subset.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Pretendard-Medium.subset.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/assets/fonts/Pretendard-SemiBold.subset.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={pretendard.className}>{children}</body>
     </html>
   );
 }
