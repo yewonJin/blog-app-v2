@@ -17,10 +17,6 @@ body {
   padding: 0;
   margin: 0;
 
-  background: var(--background-color);
-  color: var(--text-color);
-}
-
-a {
-  color: var(--link-color);
+  background: var(--primaryBackground);
+  color: var(--primaryText);
 }
