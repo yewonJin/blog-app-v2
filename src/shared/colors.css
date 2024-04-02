@@ -3,11 +3,14 @@
 
   --primaryFill: #f5f5f5;
   --primaryHoverFill: #ddd;
+  --secondaryFill: #ccc;
 
   --primaryText: #333;
   --primaryAccentText: #000;
   --secondaryText: #555;
   --tertiaryText: #777;
+
+  --primaryColor: #1378ae;
 
   --primaryError: #e57373;
   --secondaryError: #f44336;
@@ -27,6 +30,7 @@ html[data-theme="dark"] {
 
   --primaryFill: #222;
   --primaryHoverFill: #333;
+  --secondaryFill: #444;
 
   --primaryText: #ddd;
   --primaryAccentText: #fff;
