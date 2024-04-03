@@ -16,7 +16,6 @@ type Props = {
   summary: string;
   category: string;
   date: string;
-  imageUrl?: string;
 };
 
 export function PostCard({
@@ -25,13 +24,18 @@ export function PostCard({
   summary,
   category,
   date,
-  imageUrl,
 }: Props) {
   return (
     <Link href={`/post/${postNumber}`}>
       <StyledPostCard>
         <ImageContainer>
-          {imageUrl && <Image alt="post thumbnail" src={imageUrl} fill />}
+          <Image
+            alt="post thumbnail"
+            sizes="400px"
+            src={`https://doromobucket.s3.ap-northeast-2.amazonaws.com/posts/${postNumber}/thumbnail.webp`}
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </ImageContainer>
         <Content>
           <Title>{title}</Title>

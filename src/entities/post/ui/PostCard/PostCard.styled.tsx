@@ -12,9 +12,9 @@ export const StyledPostCard = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+  position: relative;
   width: 100%;
   aspect-ratio: 16/9;
-  background-color: var(--secondaryFill);
 `;
 
 export const Content = styled.div`
