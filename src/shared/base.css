@@ -20,3 +20,8 @@ body {
   background: var(--primaryBackground);
   color: var(--primaryText);
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
