@@ -25,3 +25,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+html[data-theme="dark"] .light {
+  display: none;
+}
+
+html[data-theme="light"] .dark {
+  display: none;
+}
