@@ -28,6 +28,12 @@ export const Title = styled.h2`
   font-size: 20px;
   font-weight: 500;
   margin: 5px 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 `;
 
 export const Summary = styled.p`
