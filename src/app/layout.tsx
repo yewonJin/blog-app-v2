@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../shared/base.css";
 import { Header } from "@/widgets/Header";
 import { ThemeProvider, setInitialThemeMode } from "@/entities/theme";
+import { Layout } from "@/shared/ui";
 
 export const pretendard = localFont({
   src: [
@@ -41,7 +42,7 @@ export default function RootLayout({
         ></script>
         <ThemeProvider>
           <Header />
-          {children}
+          <Layout>{children}</Layout>
         </ThemeProvider>
       </body>
     </html>
