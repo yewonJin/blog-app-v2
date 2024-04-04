@@ -1,12 +1,10 @@
+import { getCategory } from "@/entities/category";
 import { CategoryItem } from "@/entities/category";
-import { Category } from "@/entities/category/model/types";
 import { StyledCategoryList } from "./CategoryList.styled";
 
-type Props = {
-  categories: Category[];
-};
+export async function CategoryList() {
+  const categories = await getCategory();
 
-export function CategoryList({ categories }: Props) {
   return (
     <StyledCategoryList>
       {categories.map((category) => (

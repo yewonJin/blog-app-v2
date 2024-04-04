@@ -1,11 +1,10 @@
-import { Post, PostCard } from "@/entities/post";
+import { PostCard } from "@/entities/post";
+import { getPost } from "@/entities/post";
 import { StyledPostRecentList } from "./PostRecentList.styled";
 
-type Props = {
-  posts: Omit<Post, "content">[];
-};
+export async function PostRecentList() {
+  const posts = await getPost();
 
-export function PostRecentList({ posts }: Props) {
   return (
     <div>
       <StyledPostRecentList>
