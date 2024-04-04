@@ -1,4 +1,4 @@
-export type Post = {
+export type TPost = {
   postNumber: number;
   title: string;
   category: string;
