@@ -1,2 +1,3 @@
 export { CategoryItem } from "./ui/CategoryItem/CategoryItem";
-export { getCategory } from "./api/getCategory";
+export { type TCategory } from "./model/types";
+export { useStore } from "./model/store";
