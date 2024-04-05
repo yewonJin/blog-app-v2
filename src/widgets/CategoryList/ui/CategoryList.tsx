@@ -1,5 +1,5 @@
 import { TCategory } from "@/entities/category";
-import { SortBy } from "@/features/category/sortBy";
+import { SortBy } from "@/features/post/sortBy";
 import { StyledCategoryList } from "./CategoryList.styled";
 
 export function CategoryList({ categories }: { categories: TCategory[] }) {
