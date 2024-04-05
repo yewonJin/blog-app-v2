@@ -9,3 +9,12 @@ export const getPost = async () => {
 
   return posts;
 };
+
+export const getPostByPostNumber = async (postNumber: number) => {
+  "use server";
+  await connectMongo();
+
+  const post = await Post.findByPostNumber(postNumber);
+
+  return post[0];
+};
