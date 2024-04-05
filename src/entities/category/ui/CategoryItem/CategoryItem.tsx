@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import {
   CategoryLength,
   CategoryName,
@@ -13,11 +11,9 @@ type Props = {
 
 export function CategoryItem({ category, length }: Props) {
   return (
-    <Link href={`/category/${category}`}>
-      <StyledCategoryItem>
-        <CategoryName>{category}</CategoryName>
-        <CategoryLength>{`(${length})`}</CategoryLength>
-      </StyledCategoryItem>
-    </Link>
+    <StyledCategoryItem>
+      <CategoryName>{category}</CategoryName>
+      <CategoryLength>{`(${length})`}</CategoryLength>
+    </StyledCategoryItem>
   );
 }
