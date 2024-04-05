@@ -20,7 +20,7 @@ export const Menu = styled.div`
   gap: 0.8rem;
 `;
 
-export const Title = styled.a`
+export const Logo = styled.div`
   font-size: 24px;
   font-weight: 600;
 

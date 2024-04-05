@@ -1,12 +1,16 @@
+import Link from "next/link";
+
 import { Icon } from "@/shared/ui";
-import { Menu, StyledHeader, Title } from "./Header.styled";
+import { Menu, StyledHeader, Logo } from "./Header.styled";
 import { ChangeTheme } from "@/features/theme/changeTheme";
 
 export function Header() {
   return (
     <nav>
       <StyledHeader>
-        <Title>DLOG</Title>
+        <Link href={"/"}>
+          <Logo>DLOG</Logo>
+        </Link>
         <Menu>
           <ChangeTheme theme="dark" />
           <ChangeTheme theme="light" />
