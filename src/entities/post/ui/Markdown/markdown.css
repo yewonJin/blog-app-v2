@@ -192,3 +192,11 @@
     font-size: 14px;
   }
 }
+
+html[data-theme="dark"] pre > .dark {
+  display: block;
+}
+
+html[data-theme="light"] pre > .light {
+  display: block;
+}
