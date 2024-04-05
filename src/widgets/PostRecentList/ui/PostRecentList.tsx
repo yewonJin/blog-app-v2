@@ -1,24 +1,26 @@
-import { PostCard } from "@/entities/post";
-import { getPost } from "@/entities/post";
+"use client";
+
+import { PostCard, TPost } from "@/entities/post";
+import { useStore } from "@/entities/category";
 import { StyledPostRecentList } from "./PostRecentList.styled";
 
-export async function PostRecentList() {
-  const posts = await getPost();
+export function PostRecentList({ posts }: { posts: TPost[] }) {
+  const category = useStore((state) => state.sortBy);
 
   return (
-    <div>
-      <StyledPostRecentList>
-        {posts.map((post) => (
+    <StyledPostRecentList>
+      {posts
+        .filter((x) => (category === "" ? true : x.category === category))
+        .map((post) => (
           <PostCard
             key={post.postNumber}
             postNumber={post.postNumber.toString()}
             title={post.title}
             summary={post.summary}
             category={post.category}
-            date={post.date.toISOString().split("T")[0]}
+            date={new Date(post.date).toISOString().split("T")[0]}
           />
         ))}
-      </StyledPostRecentList>
-    </div>
+    </StyledPostRecentList>
   );
 }
