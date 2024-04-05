@@ -5,7 +5,7 @@ export const getPost = async () => {
   "use server";
   await connectMongo();
 
-  const posts = await Post.findRecentPostWithoutContent(9);
+  const posts = await Post.findAllWithoutContent();
 
   return posts;
 };
