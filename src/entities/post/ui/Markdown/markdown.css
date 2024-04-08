@@ -1,3 +1,7 @@
+.markdownBox {
+  max-width: 800px;
+}
+
 .markdownBox > * {
   padding: 0;
   margin: 0;
@@ -39,16 +43,17 @@
   margin-bottom: 40px;
 }
 
-.markdownBox h2 {
-  font-size: 28px;
-}
-
 .markdownBox h1:first-child {
   margin-top: 0px;
 }
 
 .markdownBox h2:first-child {
   margin-top: 0px;
+}
+
+.markdownBox h2 {
+  font-size: 28px;
+  line-height: 40px;
 }
 
 .markdownBox > h3 {
@@ -93,6 +98,7 @@
 
 .markdownBox a {
   color: #2a7ffd;
+  width: auto !important;
 }
 
 .markdownBox blockquote {
@@ -132,6 +138,30 @@
 .markdownBox table th {
   padding: 12px;
   border-bottom: 1px solid var(--secondaryFill);
+}
+
+@keyframes fadein {
+  from {
+    fill: white;
+  }
+
+  to {
+    fill: #2a7ffd;
+  }
+}
+
+.markdownBox :is(h1, h2, h3, h4) > div > svg {
+  opacity: 0;
+  margin-bottom: 0px;
+  font-size: 1.8rem;
+  transform: rotate(-45deg);
+}
+
+.markdownBox :is(h1, h2, h3, h4) > a:hover ~ div > svg {
+  opacity: 1;
+  fill: #2a7ffd;
+
+  animation: fadein 0.25s;
 }
 
 .markdownBox table td {

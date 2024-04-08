@@ -7,14 +7,31 @@ import {
   prism,
   vscDarkPlus,
 } from "react-syntax-highlighter/dist/esm/styles/prism";
-import React, { Fragment } from "react";
+import { memo, Fragment, useRef } from "react";
 import "./markdown.css";
+
+import { Icon } from "@/shared/ui";
+import { getPostIndex } from "../../lib/postIndex";
 
 type Props = {
   markdown: string;
 };
 
 export function MDViewer({ markdown }: Props) {
+  const ref = useRef(0);
+
+  const postIndex = getPostIndex(markdown);
+
+  const getHeadValue = () => {
+    const value = postIndex[ref.current++].content;
+
+    if (ref.current >= postIndex.length) {
+      ref.current = 0;
+    }
+
+    return value;
+  };
+
   const MarkdownComponents: object = {
     code({
       node,
@@ -72,15 +89,60 @@ export function MDViewer({ markdown }: Props) {
         </div>
       );
     },
+
+    h1({ node, ...props }: { node: any; [x: string]: any }) {
+      const value = getHeadValue();
+
+      return (
+        <h1 id={value}>
+          <a href={`#${value}`}>{props.children}</a>
+          <Icon type="link" />
+        </h1>
+      );
+    },
+
+    h2({ node, ...props }: { node: any; [x: string]: any }) {
+      const value = getHeadValue();
+
+      return (
+        <h2 id={value}>
+          <a href={`#${value}`}>{props.children}</a> <Icon type="link" />
+        </h2>
+      );
+    },
+
+    h3({ node, ...props }: { node: any; [x: string]: any }) {
+      const value = getHeadValue();
+
+      return (
+        <h3 id={value}>
+          <a href={`#${value}`}>{props.children}</a> <Icon type="link" />
+        </h3>
+      );
+    },
+
+    h4({ node, ...props }: { node: any; [x: string]: any }) {
+      const value = getHeadValue();
+
+      return (
+        <h4 id={value}>
+          <a href={`#${value}`}>{props.children}</a> <Icon type="link" />
+        </h4>
+      );
+    },
   };
 
   return (
-    <ReactMarkdown
-      className="markdownBox"
-      components={MarkdownComponents}
-      remarkPlugins={[remarkGfm]}
-    >
-      {markdown}
-    </ReactMarkdown>
+    <div>
+      <ReactMarkdown
+        className="markdownBox"
+        components={MarkdownComponents}
+        remarkPlugins={[remarkGfm]}
+      >
+        {markdown}
+      </ReactMarkdown>
+    </div>
   );
 }
+
+export const MemoizedMDViwer = memo(MDViewer);

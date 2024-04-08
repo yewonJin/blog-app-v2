@@ -1,31 +1,43 @@
 import Link from "next/link";
 
-import { MDViewer } from "@/entities/post";
+import { MemoizedMDViwer, PostIndex, TPost } from "@/entities/post";
 import {
   PostCategory,
   PostDate,
   PostHeader,
   PostHeaderWrapper,
+  PostIndexHeading,
+  PostNav,
+  PostMain,
   PostTitle,
   StyledPostDetails,
+  PostIndexNav,
 } from "./PostDetails.styled";
-import { getPostByPostNumber } from "@/entities/post/api/getPost";
 
-export async function PostDetails({ id }: { id: number }) {
-  const post = await getPostByPostNumber(id);
-
+export function PostDetails({ post }: { post: TPost }) {
   return (
     <StyledPostDetails>
-      <PostHeader>
-        <PostHeaderWrapper>
+      <PostNav />
+      <PostMain>
+        <PostHeader>
           <PostTitle>{post.title}</PostTitle>
-          <PostCategory>
-            <Link href={`/category/${post.category}`}>{post.category}</Link>
-          </PostCategory>
-        </PostHeaderWrapper>
-        <PostDate>{post.date.toISOString().split("T")[0]}</PostDate>
-      </PostHeader>
-      <MDViewer markdown={post.content} />
+          <PostHeaderWrapper>
+            <PostCategory>
+              <Link href={`/category/${post.category}`}>{post.category}</Link>
+            </PostCategory>
+            <PostDate>
+              {new Date(post.date).toISOString().split("T")[0]}
+            </PostDate>
+          </PostHeaderWrapper>
+        </PostHeader>
+        <MemoizedMDViwer markdown={post.content} />
+      </PostMain>
+      <PostNav>
+        <PostIndexNav>
+          <PostIndexHeading>목차</PostIndexHeading>
+          <PostIndex markdown={post.content} />
+        </PostIndexNav>
+      </PostNav>
     </StyledPostDetails>
   );
 }

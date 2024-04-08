@@ -1,3 +1,4 @@
 export { type TPost } from "./model/types";
-export { MDViewer } from "./ui/Markdown/MDViewer";
+export { MemoizedMDViwer } from "./ui/Markdown/MDViewer";
 export { PostCard } from "./ui/PostCard/PostCard";
+export { PostIndex } from "./ui/PostIndex/PostIndex";
