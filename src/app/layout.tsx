@@ -4,6 +4,7 @@ import "../shared/base.css";
 import { Header } from "@/widgets/Header";
 import { ThemeProvider, setInitialThemeMode } from "@/entities/theme";
 import { Layout } from "@/shared/ui";
+import { Footer } from "@/widgets/Footer";
 
 export const pretendard = localFont({
   src: [
@@ -43,6 +44,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           <Layout>{children}</Layout>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
