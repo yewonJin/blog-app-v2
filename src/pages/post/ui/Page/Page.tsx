@@ -2,6 +2,7 @@ import { PostDetails } from "@/widgets/PostDetails";
 import { getPostByPostNumber } from "@/entities/post/api/getPost";
 import { RelatedPostList } from "@/widgets/RelatedPostList";
 import { getRelatedPosts } from "@/entities/category";
+import { ScrollToTop } from "@/shared/ui";
 
 type Props = {
   id: number;
@@ -15,6 +16,7 @@ export async function PostPage({ id }: Props) {
     <>
       <PostDetails post={JSON.parse(JSON.stringify(post))} />
       <RelatedPostList posts={JSON.parse(JSON.stringify(relatedPosts))} />
+      <ScrollToTop />
     </>
   );
 }
