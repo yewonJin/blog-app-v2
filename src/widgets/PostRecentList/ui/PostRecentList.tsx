@@ -3,6 +3,7 @@
 import { PostCard, TPost } from "@/entities/post";
 import { useStore } from "@/entities/category";
 import { StyledPostRecentList } from "./PostRecentList.styled";
+import { getDate } from "@/shared/lib";
 
 export function PostRecentList({ posts }: { posts: TPost[] }) {
   const category = useStore((state) => state.sortBy);
@@ -18,7 +19,7 @@ export function PostRecentList({ posts }: { posts: TPost[] }) {
             title={post.title}
             summary={post.summary}
             category={post.category}
-            date={new Date(post.date).toISOString().split("T")[0]}
+            date={getDate(post.date)}
           />
         ))}
     </StyledPostRecentList>
