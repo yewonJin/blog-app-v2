@@ -20,7 +20,7 @@ export const StyledPostDetails = styled.div`
   }
 `;
 
-export const PostHeader = styled.div`
+export const Header = styled.div`
   display: flex;
   gap: 16px;
   padding-bottom: 0.8rem;
@@ -32,7 +32,7 @@ export const PostHeader = styled.div`
   }
 `;
 
-export const PostHeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -44,7 +44,7 @@ export const PostHeaderWrapper = styled.div`
   }
 `;
 
-export const PostTitle = styled.h1`
+export const Title = styled.h1`
   width: auto;
   font-size: 28px;
   line-height: 40px;
@@ -52,7 +52,7 @@ export const PostTitle = styled.h1`
   margin: 0px;
 `;
 
-export const PostCategory = styled.span`
+export const Category = styled.span`
   font-size: 16px;
   color: var(--tertiaryText);
   margin-bottom: 4px;
@@ -62,7 +62,7 @@ export const PostCategory = styled.span`
   }
 `;
 
-export const PostDate = styled.div`
+export const Date = styled.div`
   font-size: 16px;
   color: var(--tertiaryText);
   display: flex;
@@ -70,7 +70,7 @@ export const PostDate = styled.div`
   margin-bottom: 4px;
 `;
 
-export const PostNav = styled.nav`
+export const Nav = styled.nav`
   position: relative;
   width: 250px;
   display: flex;
@@ -82,11 +82,11 @@ export const PostNav = styled.nav`
   }
 `;
 
-export const PostIndexNav = styled.div`
+export const IndexContainer = styled.div`
   position: fixed;
 `;
 
-export const PostMain = styled.div`
+export const Main = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -96,4 +96,15 @@ export const PostMain = styled.div`
   }
 `;
 
-export const PostIndexHeading = styled.h3``;
+export const IndexTitle = styled.h3``;
+
+export const IndexFooter = styled.a`
+  font-size: 16px;
+  width: 100%;
+  color: var(--tertiaryText);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--primaryText);
+  }
+`;

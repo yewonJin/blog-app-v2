@@ -2,42 +2,43 @@ import Link from "next/link";
 
 import { MemoizedMDViwer, PostIndex, TPost } from "@/entities/post";
 import {
-  PostCategory,
-  PostDate,
-  PostHeader,
-  PostHeaderWrapper,
-  PostIndexHeading,
-  PostNav,
-  PostMain,
-  PostTitle,
+  Category,
+  Date,
+  Header,
+  HeaderWrapper,
+  IndexTitle,
+  Nav,
+  Main,
+  Title,
   StyledPostDetails,
-  PostIndexNav,
+  IndexContainer,
+  IndexFooter,
 } from "./PostDetails.styled";
+import { getDate } from "@/shared/lib";
 
 export function PostDetails({ post }: { post: TPost }) {
   return (
     <StyledPostDetails>
-      <PostNav />
-      <PostMain>
-        <PostHeader>
-          <PostTitle>{post.title}</PostTitle>
-          <PostHeaderWrapper>
-            <PostCategory>
+      <Nav />
+      <Main>
+        <Header>
+          <Title>{post.title}</Title>
+          <HeaderWrapper>
+            <Category>
               <Link href={`/category/${post.category}`}>{post.category}</Link>
-            </PostCategory>
-            <PostDate>
-              {new Date(post.date).toISOString().split("T")[0]}
-            </PostDate>
-          </PostHeaderWrapper>
-        </PostHeader>
+            </Category>
+            <Date>{getDate(post.date)}</Date>
+          </HeaderWrapper>
+        </Header>
         <MemoizedMDViwer markdown={post.content} />
-      </PostMain>
-      <PostNav>
-        <PostIndexNav>
-          <PostIndexHeading>목차</PostIndexHeading>
+      </Main>
+      <Nav>
+        <IndexContainer>
+          <IndexTitle>목차</IndexTitle>
           <PostIndex markdown={post.content} />
-        </PostIndexNav>
-      </PostNav>
+          <IndexFooter href="#관련-포스팅">관련 포스팅</IndexFooter>
+        </IndexContainer>
+      </Nav>
     </StyledPostDetails>
   );
 }
