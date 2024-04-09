@@ -9,3 +9,12 @@ export const getCategory = async () => {
 
   return categories;
 };
+
+export const getCategoryByName = async (categoryName: string) => {
+  "use server";
+  await connectMongo();
+
+  const categories = await Category.findByName(categoryName);
+
+  return categories;
+};

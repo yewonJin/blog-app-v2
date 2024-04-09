@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 
 export function useThrottle<T extends any[]>(

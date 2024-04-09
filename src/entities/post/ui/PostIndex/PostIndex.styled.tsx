@@ -9,12 +9,14 @@ type IndexProps = {
 };
 
 export const StyledPostIndex = styled.div`
-  position: fixed;
   width: 250px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   max-height: 50vh;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--secondaryFill);
 
   overflow-y: scroll;
 

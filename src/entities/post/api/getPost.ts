@@ -18,3 +18,12 @@ export const getPostByPostNumber = async (postNumber: number) => {
 
   return post[0];
 };
+
+export const getPostByPostNumberWithoutContent = async (postNumber: number) => {
+  "use server";
+  await connectMongo();
+
+  const post = await Post.findByPostNumberWithoutContent(postNumber);
+
+  return post[0];
+};
