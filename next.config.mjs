@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "doromobucket.s3.ap-northeast-2.amazonaws.com",
+        hostname: "doromo.s3.ap-northeast-2.amazonaws.com",
         port: "",
       },
     ],

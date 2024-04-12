@@ -21,7 +21,7 @@ export function PostListItem({ post }: Props) {
         <Image
           alt="post thumbnail"
           sizes="400px"
-          src={`https://doromobucket.s3.ap-northeast-2.amazonaws.com/posts/${post.postNumber}/thumbnail.webp`}
+          src={`https://doromo.s3.ap-northeast-2.amazonaws.com/posts/${post.postNumber}/thumbnail.webp`}
           fill
           style={{ objectFit: "cover" }}
         />
