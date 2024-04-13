@@ -1,5 +1,29 @@
-import { PostPage } from "@/pages/post";
+import { PostDetails } from "@/widgets/PostDetails";
+import {
+  getLastestPost,
+  getPostByPostNumber,
+} from "@/entities/post/api/getPost";
+import { RelatedPostList } from "@/widgets/RelatedPostList";
+import { getRelatedPosts } from "@/entities/category";
+import { ScrollToTop } from "@/shared/ui";
+
+export async function generateStaticParams() {
+  const postNumber = await getLastestPost();
+
+  return Array.from({ length: postNumber - 1 }, (_, i) => ({
+    id: (i + 1).toString(),
+  }));
+}
 
 export default async function Page({ params }: { params: { id: string } }) {
-  return <PostPage id={parseInt(params.id)} />;
+  const post = await getPostByPostNumber(parseInt(params.id));
+  const relatedPosts = await getRelatedPosts(post);
+
+  return (
+    <>
+      <PostDetails post={JSON.parse(JSON.stringify(post))} />
+      <RelatedPostList posts={JSON.parse(JSON.stringify(relatedPosts))} />
+      <ScrollToTop />
+    </>
+  );
 }

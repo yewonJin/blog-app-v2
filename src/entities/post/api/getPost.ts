@@ -1,4 +1,6 @@
-import { connectMongo } from "@/shared/api";
+"use server";
+
+import { connectMongo } from "@/shared/lib";
 import Post from "../model/post";
 
 export const getPost = async () => {
@@ -26,4 +28,14 @@ export const getPostByPostNumberWithoutContent = async (postNumber: number) => {
   const post = await Post.findByPostNumberWithoutContent(postNumber);
 
   return post[0];
+};
+
+export const getLastestPost = async () => {
+  "use server";
+
+  await connectMongo();
+
+  const nextPostNumber = await Post.findLastestPost();
+
+  return nextPostNumber[0].postNumber + 1;
 };

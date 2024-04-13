@@ -6,7 +6,7 @@ import remarkGfm from "remark-gfm";
 import {
   prism,
   vscDarkPlus,
-} from "react-syntax-highlighter/dist/esm/styles/prism";
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { memo, Fragment, useRef } from "react";
 import "./markdown.css";
 

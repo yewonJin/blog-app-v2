@@ -1,4 +1,6 @@
-import { connectMongo } from "@/shared/api";
+"use server";
+
+import { connectMongo } from "@/shared/lib";
 import Category from "../model/category";
 
 export const getCategory = async () => {

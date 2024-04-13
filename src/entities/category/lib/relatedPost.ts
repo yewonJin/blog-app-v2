@@ -1,5 +1,3 @@
-"use server";
-
 import { TPost } from "@/entities/post";
 import { getPostByPostNumberWithoutContent } from "@/entities/post/api/getPost";
 import { getCategoryByName } from "../api/getCategory";

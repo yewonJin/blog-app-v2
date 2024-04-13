@@ -9,7 +9,7 @@ interface PostModel extends Model<TPost> {
   findRecentPostWithoutContent: (numberOfPost: number) => Promise<TPost[]>;
   findByPostNumber: (postNumber: number) => Promise<TPost[]>;
   findByPostNumberWithoutContent: (postNumber: number) => Promise<TPost[]>;
-  findNextPostNumber: () => Promise<TPost[]>;
+  findLastestPost: () => Promise<TPost[]>;
   findByCategory: (category: string) => Promise<TPost[]>;
 }
 
@@ -51,7 +51,7 @@ postSchema.statics.findAllWithoutContent = function () {
   ]);
 };
 
-postSchema.statics.findNextPostNumber = function () {
+postSchema.statics.findLastestPost = function () {
   return this.aggregate([
     {
       $project: {
