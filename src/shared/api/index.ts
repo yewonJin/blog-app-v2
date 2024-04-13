@@ -1,1 +1,0 @@
-export { connectMongo } from "./connectMongo";

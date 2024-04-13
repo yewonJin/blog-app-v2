@@ -77,7 +77,7 @@
 
 .markdownBox p > strong {
   font-weight: 500;
-  color: black;
+  color: var(--primaryText);
 }
 
 .markdownBox > hr {
