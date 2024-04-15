@@ -5,7 +5,6 @@ import { Header } from "@/widgets/Header";
 import { ThemeProvider, setInitialThemeMode } from "@/entities/theme";
 import { Layout } from "@/shared/ui";
 import { Footer } from "@/widgets/Footer";
-import ReactQuery from "./Provider/ReactQuery";
 
 export const pretendard = localFont({
   src: [
@@ -44,9 +43,7 @@ export default function RootLayout({
         ></script>
         <ThemeProvider>
           <Header />
-          <Layout>
-            <ReactQuery>{children}</ReactQuery>
-          </Layout>
+          <Layout>{children}</Layout>
           <Footer />
         </ThemeProvider>
       </body>

@@ -1,4 +1,4 @@
-export type TCategory = {
+export type Category = {
   name: string;
   posts: number[];
 };

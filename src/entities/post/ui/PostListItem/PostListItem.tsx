@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TPost } from "../../model/types";
+import { Post } from "../../model/types";
 import {
   StyledPostListItem,
   ImageContainer,
@@ -11,7 +11,7 @@ import {
 import { getDate } from "@/shared/lib";
 
 type Props = {
-  post: TPost;
+  post: Post;
 };
 
 export function PostListItem({ post }: Props) {

@@ -6,7 +6,7 @@ export const getRelatedPosts = async (post: TPost) => {
   const category = await getCategoryByName(post.category);
 
   const categoryPosts = await Promise.all(
-    category.posts.map(async (postNumber) => {
+    category.posts.map(async (postNumber: number) => {
       if (postNumber === post.postNumber) return null;
 
       const res = await getPostByPostNumberWithoutContent(postNumber);

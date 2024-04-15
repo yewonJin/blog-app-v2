@@ -11,10 +11,6 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
-    config.resolve.fallback = {
-      "mongodb-client-encryption": false,
-      aws4: false,
-    };
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
