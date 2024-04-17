@@ -9,7 +9,7 @@ export const StyledPostDetails = styled.div`
   margin: 0px auto;
 
   @media (max-width: 1400px) {
-    width: 100%;
+    width: min-content;
     justify-content: start;
     padding: 0px 1rem;
     gap: 2rem;
@@ -17,6 +17,10 @@ export const StyledPostDetails = styled.div`
     :first-of-type > nav:first-of-type {
       display: none;
     }
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;
 
