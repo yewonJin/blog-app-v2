@@ -36,7 +36,7 @@ export function PostDetails({ post }: { post: TPost }) {
         <IndexContainer>
           <IndexTitle>목차</IndexTitle>
           <PostIndex markdown={post.content} />
-          <IndexFooter href="#관련-포스팅">관련 포스팅</IndexFooter>
+          <IndexFooter href="#관련-포스트">관련 포스트</IndexFooter>
         </IndexContainer>
       </Nav>
     </StyledPostDetails>
