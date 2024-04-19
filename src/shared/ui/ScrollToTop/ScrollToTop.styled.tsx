@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 
 export const StyledScrollToTop = styled.div`
   position: fixed;
-  right: 26vw;
-  bottom: 20vh;
+  right: 6vw;
+  bottom: 6vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,10 +17,5 @@ export const StyledScrollToTop = styled.div`
   &:hover {
     background-color: var(--primaryHoverFill);
     cursor: pointer;
-  }
-
-  @media (max-width: 900px) {
-    right: 10vw;
-    bottom: 10vh;
   }
 `;
