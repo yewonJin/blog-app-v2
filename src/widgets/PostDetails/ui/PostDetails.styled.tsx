@@ -9,8 +9,8 @@ export const StyledPostDetails = styled.div`
   margin: 0px auto;
 
   @media (max-width: 1400px) {
-    width: min-content;
-    justify-content: start;
+    width: 100%;
+    justify-content: center;
     padding: 0px 1rem;
     gap: 2rem;
 
