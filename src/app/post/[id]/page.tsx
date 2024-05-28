@@ -1,10 +1,7 @@
 import { PostDetails } from "@/widgets/PostDetails";
-import {
-  getLastestPost,
-  getPostByPostNumber,
-} from "@/entities/post/api/getPost";
 import { RelatedPostList } from "@/widgets/RelatedPostList";
 import { getRelatedPosts } from "@/entities/category";
+import { getLastestPost, getPostByPostNumber } from "@/entities/post";
 import { ScrollToTop } from "@/shared/ui";
 
 export async function generateStaticParams() {

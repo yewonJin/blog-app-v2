@@ -1,7 +1,7 @@
-import { getCategory } from "@/entities/category/api/getCategory";
-import { getPost } from "@/entities/post/api/getPost";
 import { CategoryList } from "@/widgets/CategoryList";
 import { PostRecentList } from "@/widgets/PostRecentList";
+import { getCategory } from "@/entities/category";
+import { getPost } from "@/entities/post";
 
 export default async function Page() {
   const posts = await getPost();
