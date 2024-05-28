@@ -1,6 +1,6 @@
 "use client";
 
-import { CategoryItem, useStore } from "@/entities/category";
+import { CategoryItem, useCategoryStore } from "@/entities/category";
 import { StyledSortBy } from "./SortBy.styled";
 
 type Props = {
@@ -9,8 +9,8 @@ type Props = {
 };
 
 export function SortBy({ category, length }: Props) {
-  const sortBy = useStore((state) => state.sortBy);
-  const setSortBy = useStore((state) => state.setSortBy);
+  const sortBy = useCategoryStore((state) => state.sortBy);
+  const setSortBy = useCategoryStore((state) => state.setSortBy);
 
   const handleClick = () => {
     if (sortBy === category) {

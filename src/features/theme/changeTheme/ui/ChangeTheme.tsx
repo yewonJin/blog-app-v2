@@ -1,6 +1,6 @@
 "use client";
 
-import { Theme, useStore } from "@/entities/theme";
+import { Theme, useThemeStore } from "@/entities/theme";
 import { Icon } from "@/shared/ui";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 export function ChangeTheme({ theme }: Props) {
-  const setTheme = useStore((state) => state.setTheme);
+  const setTheme = useThemeStore((state) => state.setTheme);
 
   const onClick = () => {
     if (theme === "dark") {

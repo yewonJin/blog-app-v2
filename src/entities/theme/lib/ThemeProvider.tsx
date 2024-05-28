@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 
-import { type Theme } from "../model/types";
-import { useStore } from "../model/store";
+import { type Theme } from "@/entities/theme";
+import { useThemeStore } from "@/entities/theme";
 
 type Props = {
   localStorageTheme?: Theme;
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export function ThemeProvider({ children }: Props) {
-  const setTheme = useStore((state) => state.setTheme);
+  const setTheme = useThemeStore((state) => state.setTheme);
 
   useEffect(() => {
     const theme = document

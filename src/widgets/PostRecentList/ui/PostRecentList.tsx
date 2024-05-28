@@ -1,12 +1,12 @@
 "use client";
 
 import { PostCard, Post } from "@/entities/post";
-import { useStore } from "@/entities/category";
-import { StyledPostRecentList } from "./PostRecentList.styled";
+import { useCategoryStore } from "@/entities/category";
 import { getDate } from "@/shared/lib";
+import { StyledPostRecentList } from "./PostRecentList.styled";
 
 export function PostRecentList({ posts }: { posts: Post[] }) {
-  const category = useStore((state) => state.sortBy);
+  const category = useCategoryStore((state) => state.sortBy);
 
   return (
     <StyledPostRecentList>

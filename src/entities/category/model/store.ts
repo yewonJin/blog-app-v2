@@ -5,7 +5,7 @@ type Store = {
   setSortBy: (sortBy: string) => void;
 };
 
-export const useStore = create<Store>((set) => ({
+export const useCategoryStore = create<Store>((set) => ({
   sortBy: "",
   setSortBy: (sortBy) => set({ sortBy }),
 }));
