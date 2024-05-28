@@ -1,10 +1,14 @@
-export const getPost = async () => {
+import { Post } from "../model/types";
+
+export const getPost = async (): Promise<Omit<Post, "content">[]> => {
   const result = await (await fetch(`${process.env.BASE_URL}/api/post`)).json();
 
   return result;
 };
 
-export const getPostByPostNumber = async (postNumber: number) => {
+export const getPostByPostNumber = async (
+  postNumber: number
+): Promise<Post> => {
   const result = await (
     await fetch(`${process.env.BASE_URL}/api/post?id=${postNumber}`)
   ).json();
@@ -12,7 +16,9 @@ export const getPostByPostNumber = async (postNumber: number) => {
   return result;
 };
 
-export const getPostByPostNumberWithoutContent = async (postNumber: number) => {
+export const getPostByPostNumberWithoutContent = async (
+  postNumber: number
+): Promise<Omit<Post, "content">> => {
   const result = await (
     await fetch(
       `${process.env.BASE_URL}/api/post?id=${postNumber}&content=false`
@@ -22,7 +28,7 @@ export const getPostByPostNumberWithoutContent = async (postNumber: number) => {
   return result;
 };
 
-export const getLastestPost = async () => {
+export const getLastestPost = async (): Promise<number> => {
   const result = await (
     await fetch(`${process.env.BASE_URL}/api/post?postNumber=true`)
   ).json();
