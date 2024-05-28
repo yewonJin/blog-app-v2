@@ -1,8 +1,8 @@
-import { TPost } from "@/entities/post";
+import { Post } from "@/entities/post";
 import { getPostByPostNumberWithoutContent } from "@/entities/post/api/getPost";
 import { getCategoryByName } from "../api/getCategory";
 
-export const getRelatedPosts = async (post: TPost) => {
+export const getRelatedPosts = async (post: Post) => {
   const category = await getCategoryByName(post.category);
 
   const categoryPosts = await Promise.all(
@@ -15,7 +15,7 @@ export const getRelatedPosts = async (post: TPost) => {
     })
   );
 
-  const relatedPosts = categoryPosts.filter((x) => x) as unknown as TPost[];
+  const relatedPosts = categoryPosts.filter((x) => x) as unknown as Post[];
 
   return relatedPosts
     .map((item) => ({

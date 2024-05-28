@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import { PostListItem, TPost } from "@/entities/post";
+import { PostListItem, Post } from "@/entities/post";
 import { Container, StyledRelatedPostList } from "./RelatedPostList.styled";
 
 type Props = {
-  posts: TPost[];
+  posts: Post[];
 };
 
 export function RelatedPostList({ posts }: Props) {

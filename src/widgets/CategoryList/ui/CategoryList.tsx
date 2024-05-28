@@ -1,8 +1,8 @@
-import { TCategory } from "@/entities/category";
+import { Category } from "@/entities/category";
 import { SortBy } from "@/features/post/sortBy";
 import { StyledCategoryList } from "./CategoryList.styled";
 
-export function CategoryList({ categories }: { categories: TCategory[] }) {
+export function CategoryList({ categories }: { categories: Category[] }) {
   return (
     <StyledCategoryList>
       {categories.map((category) => (

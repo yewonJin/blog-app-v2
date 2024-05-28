@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { MemoizedMDViwer, PostIndex, TPost } from "@/entities/post";
+import { MemoizedMDViwer, PostIndex, Post } from "@/entities/post";
 import {
   Category,
   Date,
@@ -16,7 +16,7 @@ import {
 } from "./PostDetails.styled";
 import { getDate } from "@/shared/lib";
 
-export function PostDetails({ post }: { post: TPost }) {
+export function PostDetails({ post }: { post: Post }) {
   return (
     <StyledPostDetails>
       <Nav />
