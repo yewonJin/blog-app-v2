@@ -1,6 +1,5 @@
-import { Post } from "@/entities/post";
-import { getPostByPostNumberWithoutContent } from "@/entities/post/api/getPost";
-import { getCategoryByName } from "../api/getCategory";
+import { Post, getPostByPostNumberWithoutContent } from "@/entities/post";
+import { getCategoryByName } from "@/entities/category";
 
 export const getRelatedPosts = async (post: Post) => {
   const category = await getCategoryByName(post.category);

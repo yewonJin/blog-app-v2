@@ -1,4 +1,4 @@
-import { Post } from "../model/types";
+import { Post } from "@/entities/post";
 
 export const getPost = async (): Promise<Omit<Post, "content">[]> => {
   const result = await (await fetch(`${process.env.BASE_URL}/api/post`)).json();

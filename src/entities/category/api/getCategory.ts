@@ -1,4 +1,4 @@
-import { Category } from "../model/types";
+import { Category } from "@/entities/category";
 
 export const getCategory = async (): Promise<Category[]> => {
   const result = await (

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Post } from "../../model/types";
+import { Post } from "@/entities/post";
+import { getDate } from "@/shared/lib";
 import {
   StyledPostListItem,
   ImageContainer,
@@ -8,7 +9,6 @@ import {
   Summary,
   Date,
 } from "./PostListItem.styled";
-import { getDate } from "@/shared/lib";
 
 type Props = {
   post: Post;

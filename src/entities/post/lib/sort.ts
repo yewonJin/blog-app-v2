@@ -1,4 +1,4 @@
-import { Post } from "../model/types";
+import { Post } from "@/entities/post";
 
 export const sortByRecentDate = (arr: Post[]) => {
   return arr.sort(

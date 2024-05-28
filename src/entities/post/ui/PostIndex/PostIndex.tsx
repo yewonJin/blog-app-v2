@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { useThrottle } from "@/shared/lib";
-import { getPostIndex } from "../../lib/postIndex";
+import { getPostIndex } from "@/entities/post/lib/postIndex";
 import { PostIndexItem, StyledPostIndex } from "./PostIndex.styled";
 
 interface ExtendedElement extends Element {

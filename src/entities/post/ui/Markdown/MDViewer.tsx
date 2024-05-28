@@ -11,7 +11,7 @@ import { memo, Fragment, useRef } from "react";
 import "./markdown.css";
 
 import { Icon } from "@/shared/ui";
-import { getPostIndex } from "../../lib/postIndex";
+import { getPostIndex } from "@/entities/post/lib/postIndex";
 
 type Props = {
   markdown: string;
