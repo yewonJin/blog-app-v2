@@ -1,11 +1,11 @@
 import { CategoryList } from "@/widgets/CategoryList";
 import { PostRecentList } from "@/widgets/PostRecentList";
-import { getCategory } from "@/entities/category";
-import { getPost } from "@/entities/post";
+import { getCateroies } from "@/entities/category";
+import { getAllPosts } from "@/entities/post";
 
 export default async function Page() {
-  const posts = await getPost();
-  const categories = await getCategory();
+  const posts = await getAllPosts();
+  const categories = await getCateroies();
 
   return (
     <>

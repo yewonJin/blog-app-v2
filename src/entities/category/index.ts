@@ -1,4 +1,4 @@
-export { getCategory, getCategoryByName } from "./api/getCategory";
+export { getCateroies, getCategoryByName } from "./api/getCategory";
 
 export { getRelatedPosts } from "./lib/relatedPost";
 

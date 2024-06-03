@@ -1,11 +1,11 @@
 import { PostDetails } from "@/widgets/PostDetails";
 import { RelatedPostList } from "@/widgets/RelatedPostList";
 import { getRelatedPosts } from "@/entities/category";
-import { getLastestPost, getPostByPostNumber } from "@/entities/post";
+import { getNextPostNumber, getPostByPostNumber } from "@/entities/post";
 import { ScrollToTop } from "@/shared/ui";
 
 export async function generateStaticParams() {
-  const postNumber = await getLastestPost();
+  const postNumber = await getNextPostNumber();
 
   return Array.from({ length: postNumber - 1 }, (_, i) => ({
     id: (i + 1).toString(),

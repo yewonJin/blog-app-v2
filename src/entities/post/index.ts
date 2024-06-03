@@ -1,8 +1,7 @@
 export {
-  getPost,
+  getAllPosts,
   getPostByPostNumber,
-  getPostByPostNumberWithoutContent,
-  getLastestPost,
+  getNextPostNumber,
 } from "./api/getPost";
 
 export { sortByRecentDate } from "./lib/sort";

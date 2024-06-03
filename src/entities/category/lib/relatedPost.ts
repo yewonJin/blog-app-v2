@@ -1,4 +1,4 @@
-import { Post, getPostByPostNumberWithoutContent } from "@/entities/post";
+import { Post, getPostByPostNumber } from "@/entities/post";
 import { getCategoryByName } from "@/entities/category";
 
 export const getRelatedPosts = async (post: Post) => {
@@ -8,7 +8,7 @@ export const getRelatedPosts = async (post: Post) => {
     category.posts.map(async (postNumber: number) => {
       if (postNumber === post.postNumber) return null;
 
-      const res = await getPostByPostNumberWithoutContent(postNumber);
+      const res = await getPostByPostNumber(postNumber);
 
       return res;
     })
