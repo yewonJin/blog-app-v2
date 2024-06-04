@@ -6,6 +6,7 @@ export const login = async (body: { id: string; password: string }) => {
     return await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`, {
       method: "POST",
       body: JSON.stringify(body),
+      credentials: "include",
       headers: myHeaders,
     });
   } catch (error) {
