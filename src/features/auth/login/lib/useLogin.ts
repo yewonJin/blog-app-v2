@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { setCookie } from "cookies-next";
 
 import { login } from "../api/login";
 
@@ -19,7 +20,9 @@ export const useLogin = () => {
     e.preventDefault();
 
     mutation.mutate(input, {
-      onSuccess() {
+      async onSuccess(data) {
+        await data.json().then((res) => setCookie("jwt", res));
+
         router.push("/admin");
       },
     });
