@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 type ButtonProps = {
-  buttonStyle?: "success" | "info" | "error" | "warning";
+  buttonType?: "success" | "info" | "error" | "warning";
 };
 
 const StyledButton = styled.button<ButtonProps>`
@@ -17,7 +17,7 @@ const StyledButton = styled.button<ButtonProps>`
     cursor: pointer;
   }
 
-  ${({ buttonStyle }) => setButtonStyle(buttonStyle)}
+  ${({ buttonType }) => setButtonStyle(buttonType)}
 `;
 
 const setButtonStyle = (style?: "success" | "info" | "error" | "warning") => {

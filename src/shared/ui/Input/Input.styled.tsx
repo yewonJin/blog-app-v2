@@ -17,7 +17,7 @@ const StyledInput = styled.input<InputProps>`
   color: var(--primaryText);
 
   ::placeholder {
-    color: var(--secondaryText);
+    color: var(--tertiaryText);
   }
 
   ${({ border }) =>

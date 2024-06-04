@@ -1,18 +1,19 @@
 import { pretendard } from "@/app/layout";
 import StyledButton from "./Button.styled";
 
-type Props = {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  style?: "success" | "info" | "error" | "warning";
+  buttonType?: "success" | "info" | "error" | "warning";
   children: React.ReactNode;
-};
+}
 
-export function Button({ onClick, style, children }: Props) {
+export function Button({ onClick, buttonType, children, ...rest }: Props) {
   return (
     <StyledButton
       onClick={onClick}
-      buttonStyle={style}
+      buttonType={buttonType}
       className={pretendard.className}
+      {...rest}
     >
       {children}
     </StyledButton>

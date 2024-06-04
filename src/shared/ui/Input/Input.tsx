@@ -1,18 +1,18 @@
 import { pretendard } from "@/app/layout";
 import StyledInput from "./Input.styled";
 
-type Props = {
-  onChange?: () => void;
-  placeholder?: string;
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   border?: boolean;
-};
+}
 
-export function Input({ onChange, placeholder, border }: Props) {
+export function Input({ handleInputChange, border, ...rest }: Props) {
   return (
     <StyledInput
-      placeholder={placeholder}
+      onChange={handleInputChange}
       className={pretendard.className}
       border={border}
+      {...rest}
     />
   );
 }
